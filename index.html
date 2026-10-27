@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>220+ Free Interactive Runtime Mascots – Open Source 3D & 2D Characters | ExodeUI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore 220+ free, open-source interactive runtime mascots for web & mobile apps. Real-time spring physics, bone rigging, cursor tracking, 17 micro-interaction moments, and zero dependencies.">
+  <meta name="keywords" content="interactive mascots, animated mascots, free mascots, character animation, open source characters, 3d mascots, react mascots, vue mascots, web components characters, ui avatars, gamification mascots, spring physics, exodeui">
+  <meta name="author" content="ExodeUI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fridayowl.github.io/exode-interactive-mascots/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fridayowl.github.io/exode-interactive-mascots/">
+  <meta property="og:title" content="220+ Free Interactive Runtime Mascots – Open Source Characters">
+  <meta property="og:description" content="Free open-source library of 220+ interactive rigged mascots with real-time spring physics and cursor tracking for React, Vue, Svelte, and Web.">
+  <meta property="og:site_name" content="ExodeUI Free Interactive Mascots">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://fridayowl.github.io/exode-interactive-mascots/">
+  <meta name="twitter:title" content="220+ Free Interactive Runtime Mascots – Open Source Characters">
+  <meta name="twitter:description" content="Free open-source library of 220+ interactive rigged mascots with real-time spring physics and cursor tracking for React, Vue, Svelte, and Web.">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "220+ Free Interactive Runtime Mascots",
+    "url": "https://fridayowl.github.io/exode-interactive-mascots/",
+    "description": "Comprehensive open-source collection of 220+ interactive runtime mascots with spring physics, cursor tracking, and 17 micro-interactions for modern web applications.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "license": "https://opensource.org/licenses/MIT",
+    "keywords": "interactive mascots, animated mascots, free mascots, character animation, open source characters, web components, react mascots"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+  <script src="./exode-mascot.js" data-base="./files/" defer></script>
+
+  <style>
+/* ==========================================================================
+   ExodeUI Interactive Mascots Playground
+   ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --page-bg: #fafaf8;
+  --surface: #ffffff;
+  --surface-hover: #f4f4f2;
+  --surface-subtle: #f8f8f6;
+  --ink: #17181c;
+  --muted: #64656b;
+  --muted-light: #9c9da3;
+  --line: #e5e5df;
+  --line-strong: #d2d2cc;
+  --accent: #ff5a36;
+  --accent-hover: #ff441b;
+  --accent-subtle: rgba(255, 90, 54, 0.08);
+  --accent-ring: rgba(255, 90, 54, 0.22);
+  --sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 80px;
+}
+
+button, input, select, textarea, a { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Sticky Top Navigation Banner */
+.top-nav-banner {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14.5px;
+}
+.nav-brand:hover .nav-brand-name {
+  color: var(--accent);
+}
+.nav-brand-name {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: color 0.15s ease;
+}
+.nav-divider {
+  color: var(--line-strong);
+}
+.nav-title {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 13.5px;
+}
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border: 1px solid rgba(255, 90, 54, 0.22);
+  padding: 2px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.nav-badge-os {
+  background: #f0fdf4;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.nav-star-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #17181c;
+  background: #ffffff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid #d2d2cc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+}
+.nav-star-btn:hover {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  color: #b45309;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
+}
+.star-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #4b5563;
+  background: #f3f4f6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.nav-gh-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: all 0.15s ease;
+}
+.nav-gh-link:hover {
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+.nav-website-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #ffffff !important;
+  background: var(--accent);
+  text-decoration: none;
+  padding: 6px 13px;
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(255, 90, 54, 0.25);
+  transition: all 0.15s ease;
+}
+.nav-website-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-0.5px);
+}
+.nav-studio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #ffffff !important;
+  background: #18191c;
+  text-decoration: none;
+  padding: 6px 11px;
+  border-radius: 7px;
+  transition: background 0.15s ease;
+}
+.nav-studio-btn:hover {
+  background: #000000;
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* Hero Stage */
+.hero-section {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+@media (max-width: 960px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
+
+.hero-preview-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-mascot-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 340px;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle at 50% 30%, #ffffff 0%, #f4f4f0 100%);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+}
+.hero-mascot-box exode-mascot {
+  width: 280px !important;
+  height: 280px !important;
+}
+
+.hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.hero-species-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-hover);
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+/* Hero Controls Col */
+.hero-details-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero-head h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.hero-head p {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+/* Moments Row */
+.moments-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.moments-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.btn-moment {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-moment:hover {
+  background: var(--surface-hover);
+  border-color: var(--line-strong);
+  transform: translateY(-1px);
+}
+.btn-moment:active {
+  transform: translateY(1px);
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+}
+
+/* Tuning Sliders Grid */
+.sliders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+.slider-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.slider-val {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11.5px;
+}
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Snippet Box */
+.hero-code-block {
+  background: #17181c;
+  color: #f3f4f6;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  position: relative;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+.btn-copy-code {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-copy-code:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Search and Filters Bar */
+.search-filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.search-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.search-input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+}
+.search-input-wrap svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-light);
+  pointer-events: none;
+}
+.search-input-wrap input {
+  width: 100%;
+  padding: 10px 12px 10px 38px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.search-input-wrap input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+  outline: none;
+}
+.mascots-count-pill {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 9px 14px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+/* Species Filter Chips */
+.species-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+.chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.chip-btn:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+.chip-btn.active {
+  background: var(--ink);
+  color: #ffffff;
+  border-color: var(--ink);
+  font-weight: 600;
+}
+.chip-count {
+  font-size: 10.5px;
+  opacity: 0.75;
+}
+
+/* Mascot Grid */
+.mascot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+@media (max-width: 640px) {
+  .mascot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+.mascot-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.mascot-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(255, 90, 54, 0.1);
+}
+
+.card-img-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.card-img-wrap img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mascot-card:hover .card-img-wrap img {
+  transform: scale(1.08);
+}
+.card-color-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.card-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.card-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.card-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 11px;
+  color: var(--muted);
+}
+.card-id {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted-light);
+}
+
+/* Modal Drawer */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  width: 92%;
+  max-width: 680px;
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  z-index: 210;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.modal-overlay.open + .modal-dialog,
+.modal-dialog.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.btn-close-modal {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-close-modal:hover {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
+
+.modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal-mascot-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  background: radial-gradient(circle at 50% 30%, #ffffff 0%, #f4f4f0 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  position: relative;
+}
+.modal-mascot-preview exode-mascot {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  padding: 4px;
+  border-radius: 8px;
+}
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tab-btn.active {
+  background: #ffffff;
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn-action-primary {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.btn-action-primary:hover {
+  background: var(--accent-hover);
+}
+.btn-action-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #ffffff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.btn-action-secondary:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-hover);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #17181c;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 300;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+  </style>
+</head>
+<body>
+
+<!-- Sticky Header -->
+<header class="top-nav-banner">
+  <div class="nav-left">
+    <a href="https://www.exodeui.com/?utm_source=gh_pages_mascots&utm_medium=banner&utm_campaign=brand" target="_blank" rel="noopener noreferrer" class="nav-brand" title="ExodeUI Homepage">
+      <svg width="22" height="22" viewBox="0 0 40 40"><path d="M17 2.4H34A5.1 5.1 0 0 1 34 12.6H12A.5 .5 0 0 1 11.5 12.1V7.8A5.4 5.4 0 0 1 17 2.4Z" fill="#ff7a2b"/><circle cx="20.3" cy="20.2" r="6.5" fill="#ff7a2b"/><path d="M11.8 27.5H33.6A5.1 5.1 0 0 1 33.6 37.7H16.7A5.4 5.4 0 0 1 11.3 32.3V28.0A.5 .5 0 0 1 11.8 27.5Z" fill="#ff4a1c"/></svg>
+      <span class="nav-brand-name">ExodeUI</span>
+      <span class="nav-divider">/</span>
+      <span class="nav-title">Interactive Mascots</span>
+    </a>
+    <span class="nav-badge">220+ Free Mascots</span>
+    <span class="nav-badge nav-badge-os">Open Source (MIT)</span>
+  </div>
+  <div class="nav-right">
+    <a href="https://github.com/fridayowl/exode-interactive-mascots" target="_blank" rel="noopener noreferrer" class="nav-star-btn" title="Star this repository on GitHub">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <span>Star</span>
+      <span class="star-badge">Repo</span>
+    </a>
+    <a href="https://github.com/fridayowl/exode-interactive-mascots" target="_blank" rel="noopener noreferrer" class="nav-gh-link" title="View Source on GitHub">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      <span>GitHub</span>
+    </a>
+    <a href="https://www.exodeui.com/mascots?utm_source=gh_pages_mascots&utm_medium=top_cta&utm_campaign=visit_website" target="_blank" rel="noopener noreferrer" class="nav-website-btn" title="Explore ExodeUI Mascots Platform">
+      <span>Visit exodeui.com ↗</span>
+    </a>
+    <a href="https://app.exodeui.com/?utm_source=gh_pages_mascots&utm_medium=top_cta&utm_campaign=open_studio" target="_blank" rel="noopener noreferrer" class="nav-studio-btn" title="Open the full animation studio">
+      <span>Open Studio ↗</span>
+    </a>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Hero Feature Stage -->
+  <section class="hero-section">
+    <div class="hero-preview-col">
+      <div class="hero-mascot-box">
+        <exode-mascot id="hero-mascot" mascot="ip-3001" mood="80" tilt="10" ears="60" personality="curious"></exode-mascot>
+      </div>
+      <div class="hero-tag">
+        <span id="hero-name">Pixel the Cat</span>
+        <span class="hero-species-badge" id="hero-species">Cat</span>
+      </div>
+    </div>
+
+    <div class="hero-details-col">
+      <div class="hero-head">
+        <h1>Interactive Runtime Mascots</h1>
+        <p>A library of 220+ rigged, physics-driven mascot characters. Move your mouse to see them follow your cursor, click any emotion to trigger natural reactions, and drop them into your apps with zero dependencies.</p>
+      </div>
+
+      <!-- Quick Moment Triggers -->
+      <div>
+        <div class="moments-label">Test Real-Time Micro-Interactions (Click to Trigger)</div>
+        <div class="moments-grid">
+          <button type="button" class="btn-moment" data-moment="wave">👋 Wave</button>
+          <button type="button" class="btn-moment" data-moment="party">🎉 Party</button>
+          <button type="button" class="btn-moment" data-moment="cool">😎 Cool</button>
+          <button type="button" class="btn-moment" data-moment="love">❤️ Love</button>
+          <button type="button" class="btn-moment" data-moment="laugh">😂 Laugh</button>
+          <button type="button" class="btn-moment" data-moment="jump">✨ Jump</button>
+          <button type="button" class="btn-moment" data-moment="smile">😊 Smile</button>
+          <button type="button" class="btn-moment" data-moment="sleepy">😴 Sleepy</button>
+        </div>
+      </div>
+
+      <!-- Parameter Sliders -->
+      <div class="sliders-grid">
+        <div class="slider-item">
+          <div class="slider-header">
+            <span>Mood</span>
+            <span class="slider-val" id="val-mood">80</span>
+          </div>
+          <input type="range" id="input-mood" min="0" max="100" value="80">
+        </div>
+        <div class="slider-item">
+          <div class="slider-header">
+            <span>Head Tilt</span>
+            <span class="slider-val" id="val-tilt">10</span>
+          </div>
+          <input type="range" id="input-tilt" min="-100" max="100" value="10">
+        </div>
+        <div class="slider-item">
+          <div class="slider-header">
+            <span>Ears Perk</span>
+            <span class="slider-val" id="val-ears">60</span>
+          </div>
+          <input type="range" id="input-ears" min="0" max="100" value="60">
+        </div>
+      </div>
+
+      <!-- Quick Embed Code Snippet -->
+      <div class="hero-code-block">
+        <button type="button" class="btn-copy-code" id="btn-copy-hero">Copy Code</button>
+        <code id="hero-code-snippet">&lt;script src="https://fridayowl.github.io/exode-interactive-mascots/exode-mascot.js" defer&gt;&lt;/script&gt;
+&lt;exode-mascot mascot="ip-3001" mood="80" tilt="10" ears="60"&gt;&lt;/exode-mascot&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search & Category Filters -->
+  <section class="search-filter-section">
+    <div class="search-input-row">
+      <div class="search-input-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" id="search-input" placeholder="Search 220+ free interactive mascots (e.g. cat, robot, fox, bunny, panda, bear)..." autocomplete="off">
+      </div>
+      <div class="mascots-count-pill" id="mascots-count">Showing 221 mascots</div>
+    </div>
+
+    <!-- Species Horizontal Pills -->
+    <div class="species-chips-row" id="species-chips">
+      <button type="button" class="chip-btn active" data-species="all">All <span class="chip-count">(221)</span></button>
+    </div>
+  </section>
+
+  <!-- Mascot Grid -->
+  <section class="mascot-grid" id="mascot-grid"></section>
+
+</main>
+
+<!-- Modal Inspector -->
+<div class="modal-overlay" id="modal-overlay"></div>
+<div class="modal-dialog" id="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-mascot-name">
+  <div class="modal-header">
+    <div class="modal-title-wrap">
+      <h3 class="modal-title" id="modal-mascot-name">Pixel the Cat</h3>
+      <span class="hero-species-badge" id="modal-mascot-species">Cat</span>
+    </div>
+    <button type="button" class="btn-close-modal" id="btn-close-modal" aria-label="Close modal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <!-- Modal Live Canvas -->
+    <div class="modal-mascot-preview" id="modal-mascot-container"></div>
+
+    <!-- Quick Moments in Modal -->
+    <div class="moments-grid" style="justify-content: center;">
+      <button type="button" class="btn-moment modal-trigger" data-moment="wave">👋 Wave</button>
+      <button type="button" class="btn-moment modal-trigger" data-moment="party">🎉 Party</button>
+      <button type="button" class="btn-moment modal-trigger" data-moment="cool">😎 Cool</button>
+      <button type="button" class="btn-moment modal-trigger" data-moment="love">❤️ Love</button>
+      <button type="button" class="btn-moment modal-trigger" data-moment="laugh">😂 Laugh</button>
+      <button type="button" class="btn-moment modal-trigger" data-moment="jump">✨ Jump</button>
+    </div>
+
+    <!-- Code Export Tabs -->
+    <div class="modal-tabs" id="modal-tabs">
+      <button type="button" class="tab-btn active" data-tab="html">HTML / Web Component</button>
+      <button type="button" class="tab-btn" data-tab="react">React / Next.js</button>
+      <button type="button" class="tab-btn" data-tab="vue">Vue 3</button>
+      <button type="button" class="tab-btn" data-tab="svelte">Svelte</button>
+    </div>
+
+    <div class="hero-code-block" style="min-height: 80px;">
+      <button type="button" class="btn-copy-code" id="btn-copy-modal">Copy Snippet</button>
+      <code id="modal-code-snippet"></code>
+    </div>
+
+    <!-- Actions -->
+    <div class="modal-actions">
+      <a href="#" id="btn-download-bexode" class="btn-action-primary" download>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+        <span>Download .bexode</span>
+      </a>
+      <a href="#" id="btn-open-studio" target="_blank" rel="noopener noreferrer" class="btn-action-secondary">
+        <svg width="15" height="15" viewBox="0 0 40 40"><path d="M17 2.4H34A5.1 5.1 0 0 1 34 12.6H12A.5 .5 0 0 1 11.5 12.1V7.8A5.4 5.4 0 0 1 17 2.4Z" fill="#ff7a2b"/><circle cx="20.3" cy="20.2" r="6.5" fill="#ff7a2b"/><path d="M11.8 27.5H33.6A5.1 5.1 0 0 1 33.6 37.7H16.7A5.4 5.4 0 0 1 11.3 32.3V28.0A.5 .5 0 0 1 11.8 27.5Z" fill="#ff4a1c"/></svg>
+        <span>Open in Exode Studio ↗</span>
+      </a>
+      <a href="#" id="btn-view-website" target="_blank" rel="noopener noreferrer" class="btn-action-secondary">
+        <span>View on exodeui.com ↗</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast">Copied to clipboard!</div>
+
+<script>
+// Load manifest and initialize gallery
+let allMascots = [];
+let currentSpecies = 'all';
+let currentSearch = '';
+let selectedMascot = null;
+let activeModalTab = 'html';
+
+const heroMascot = document.getElementById('hero-mascot');
+const heroName = document.getElementById('hero-name');
+const heroSpecies = document.getElementById('hero-species');
+const heroCode = document.getElementById('hero-code-snippet');
+const grid = document.getElementById('mascot-grid');
+const countPill = document.getElementById('mascots-count');
+const searchInput = document.getElementById('search-input');
+const speciesChips = document.getElementById('species-chips');
+const toast = document.getElementById('toast');
+
+// Modal Elements
+const modalOverlay = document.getElementById('modal-overlay');
+const modalDialog = document.getElementById('modal-dialog');
+const btnCloseModal = document.getElementById('btn-close-modal');
+const modalMascotContainer = document.getElementById('modal-mascot-container');
+const modalMascotName = document.getElementById('modal-mascot-name');
+const modalMascotSpecies = document.getElementById('modal-mascot-species');
+const modalCodeSnippet = document.getElementById('modal-code-snippet');
+const btnDownloadBexode = document.getElementById('btn-download-bexode');
+const btnOpenStudio = document.getElementById('btn-open-studio');
+const btnViewWebsite = document.getElementById('btn-view-website');
+
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+// Update Hero Snippet
+function updateHeroSnippet() {
+  const m = heroMascot.getAttribute('mascot') || 'ip-3001';
+  const mood = heroMascot.getAttribute('mood') || '80';
+  const tilt = heroMascot.getAttribute('tilt') || '10';
+  const ears = heroMascot.getAttribute('ears') || '60';
+  heroCode.textContent = `<script src="https://fridayowl.github.io/exode-interactive-mascots/exode-mascot.js" defer><\/script>\n<exode-mascot mascot="${m}" mood="${mood}" tilt="${tilt}" ears="${ears}"><\/exode-mascot>`;
+}
+
+// Sliders Listeners
+document.getElementById('input-mood').addEventListener('input', (e) => {
+  const v = e.target.value;
+  document.getElementById('val-mood').textContent = v;
+  heroMascot.setAttribute('mood', v);
+  updateHeroSnippet();
+});
+document.getElementById('input-tilt').addEventListener('input', (e) => {
+  const v = e.target.value;
+  document.getElementById('val-tilt').textContent = v;
+  heroMascot.setAttribute('tilt', v);
+  updateHeroSnippet();
+});
+document.getElementById('input-ears').addEventListener('input', (e) => {
+  const v = e.target.value;
+  document.getElementById('val-ears').textContent = v;
+  heroMascot.setAttribute('ears', v);
+  updateHeroSnippet();
+});
+
+// Moment Trigger Buttons on Hero
+document.querySelectorAll('.btn-moment[data-moment]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const moment = btn.getAttribute('data-moment');
+    if (heroMascot && heroMascot.play) {
+      heroMascot.play(moment);
+    }
+  });
+});
+
+// Copy Hero Code
+document.getElementById('btn-copy-hero').addEventListener('click', () => {
+  navigator.clipboard.writeText(heroCode.textContent).then(() => {
+    showToast('HTML code copied to clipboard!');
+  });
+});
+
+// Fetch Manifest and Render Grid
+async function initGallery() {
+  try {
+    const res = await fetch('./manifest.json');
+    const data = await res.json();
+    allMascots = data.rows.map((row) => ({
+      id: row[0],
+      name: row[1],
+      species: row[2],
+      corner: row[3],
+      mainColor: row[4],
+      secondColor: row[5],
+      bgColor: row[6],
+      colorsLabel: row[7],
+    }));
+
+    buildSpeciesFilter();
+    renderGrid();
+  } catch (err) {
+    console.error('Failed to load manifest.json', err);
+  }
+}
+
+// Build Species Filter Chips
+function buildSpeciesFilter() {
+  const counts = {};
+  allMascots.forEach((m) => {
+    counts[m.species] = (counts[m.species] || 0) + 1;
+  });
+
+  const sortedSpecies = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+  speciesChips.innerHTML = `<button type="button" class="chip-btn active" data-species="all">All <span class="chip-count">(${allMascots.length})</span></button>`;
+
+  sortedSpecies.forEach((sp) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chip-btn';
+    btn.setAttribute('data-species', sp);
+    btn.innerHTML = `${sp.charAt(0).toUpperCase() + sp.slice(1)} <span class="chip-count">(${counts[sp]})</span>`;
+    speciesChips.appendChild(btn);
+  });
+
+  speciesChips.addEventListener('click', (e) => {
+    const chip = e.target.closest('.chip-btn');
+    if (!chip) return;
+    document.querySelectorAll('.chip-btn').forEach((c) => c.classList.remove('active'));
+    chip.classList.add('active');
+    currentSpecies = chip.getAttribute('data-species');
+    renderGrid();
+  });
+}
+
+// Search Input Listener
+searchInput.addEventListener('input', (e) => {
+  currentSearch = e.target.value.toLowerCase().trim();
+  renderGrid();
+});
+
+// Render Mascot Grid
+function renderGrid() {
+  grid.innerHTML = '';
+  const filtered = allMascots.filter((m) => {
+    const matchesSpecies = currentSpecies === 'all' || m.species === currentSpecies;
+    const matchesSearch = !currentSearch ||
+      m.name.toLowerCase().includes(currentSearch) ||
+      m.species.toLowerCase().includes(currentSearch) ||
+      m.id.toLowerCase().includes(currentSearch) ||
+      m.colorsLabel.toLowerCase().includes(currentSearch);
+    return matchesSpecies && matchesSearch;
+  });
+
+  countPill.textContent = `Showing ${filtered.length} mascots`;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 48px; color: var(--muted);">No mascots found matching your search.</div>';
+    return;
+  }
+
+  filtered.forEach((m) => {
+    const card = document.createElement('div');
+    card.className = 'mascot-card';
+    card.setAttribute('data-id', m.id);
+
+    card.innerHTML = `
+      <div class="card-img-wrap" style="background-color: ${m.bgColor || '#f8f8f6'};">
+        <img src="./img/${m.id}.webp" alt="${m.name}" loading="lazy" onerror="this.src='./img/${m.id}.png'">
+        <span class="card-color-dot" style="background-color: ${m.mainColor};" title="Primary: ${m.mainColor}"></span>
+      </div>
+      <div class="card-info">
+        <span class="card-name">${m.name}</span>
+        <div class="card-sub">
+          <span style="text-transform: capitalize;">${m.species}</span>
+          <span class="card-id">${m.id}</span>
+        </div>
+      </div>
+    `;
+
+    // Click card to open modal
+    card.addEventListener('click', () => {
+      openMascotModal(m);
+    });
+
+    // Hover card to trigger quick animation on hero
+    card.addEventListener('mouseenter', () => {
+      heroMascot.setAttribute('mascot', m.id);
+      heroName.textContent = m.name;
+      heroSpecies.textContent = m.species.charAt(0).toUpperCase() + m.species.slice(1);
+      updateHeroSnippet();
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+// Open Mascot Modal
+function openMascotModal(m) {
+  selectedMascot = m;
+  modalMascotName.textContent = m.name;
+  modalMascotSpecies.textContent = m.species.charAt(0).toUpperCase() + m.species.slice(1);
+
+  // Setup Live Preview Element in Modal
+  modalMascotContainer.innerHTML = `<exode-mascot id="modal-mascot" mascot="${m.id}" mood="80" tilt="0" ears="70" personality="curious"></exode-mascot>`;
+
+  // Configure Actions
+  btnDownloadBexode.href = `./files/${m.id}.bexode`;
+  btnDownloadBexode.setAttribute('download', `${m.id}.bexode`);
+  btnOpenStudio.href = `https://app.exodeui.com/?mascot=${m.id}&utm_source=gh_pages_mascots&utm_medium=modal_action`;
+  btnViewWebsite.href = `https://www.exodeui.com/mascots/${m.species}?utm_source=gh_pages_mascots&utm_medium=modal_action`;
+
+  updateModalSnippet();
+
+  modalOverlay.classList.add('open');
+  modalDialog.classList.add('open');
+}
+
+// Update Modal Code Snippet
+function updateModalSnippet() {
+  if (!selectedMascot) return;
+  const id = selectedMascot.id;
+
+  if (activeModalTab === 'html') {
+    modalCodeSnippet.textContent = `<!-- 1. Load runtime -->\n<script src="https://fridayowl.github.io/exode-interactive-mascots/exode-mascot.js" defer><\/script>\n\n<!-- 2. Place mascot -->\n<exode-mascot mascot="${id}"><\/exode-mascot>`;
+  } else if (activeModalTab === 'react') {
+    modalCodeSnippet.textContent = `import { ExodeUICanvas } from 'exodeui';\n\nexport function ${selectedMascot.name.replace(/[^a-zA-Z]/g, '')}() {\n  return (\n    <ExodeUICanvas\n      src="https://raw.githubusercontent.com/fridayowl/exode-interactive-mascots/main/files/${id}.bexode"\n      inputs={{ mood: 80, tilt: 0, ears: 60 }}\n      style={{ width: 220, height: 220 }}\n    />\n  );\n}`;
+  } else if (activeModalTab === 'vue') {
+    modalCodeSnippet.textContent = `<template>\n  <exode-mascot mascot="${id}" mood="80" style="width: 220px;" />\n</template>\n\n<script setup>\nimport 'https://fridayowl.github.io/exode-interactive-mascots/exode-mascot.js';\n<\/script>`;
+  } else if (activeModalTab === 'svelte') {
+    modalCodeSnippet.textContent = `<svelte:head>\n  <script src="https://fridayowl.github.io/exode-interactive-mascots/exode-mascot.js" defer><\/script>\n</svelte:head>\n\n<exode-mascot mascot="${id}" mood="80" style="width: 220px;" />`;
+  }
+}
+
+// Modal Trigger Buttons
+document.querySelectorAll('.btn-moment.modal-trigger').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const moment = btn.getAttribute('data-moment');
+    const el = document.getElementById('modal-mascot');
+    if (el && el.play) el.play(moment);
+  });
+});
+
+// Modal Tabs
+document.getElementById('modal-tabs').addEventListener('click', (e) => {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeModalTab = btn.getAttribute('data-tab');
+  updateModalSnippet();
+});
+
+// Copy Modal Code Snippet
+document.getElementById('btn-copy-modal').addEventListener('click', () => {
+  navigator.clipboard.writeText(modalCodeSnippet.textContent).then(() => {
+    showToast('Snippet copied to clipboard!');
+  });
+});
+
+// Close Modal
+function closeModal() {
+  modalOverlay.classList.remove('open');
+  modalDialog.classList.remove('open');
+  modalMascotContainer.innerHTML = '';
+}
+btnCloseModal.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// Start
+initGallery();
+</script>
+</body>
+</html>
